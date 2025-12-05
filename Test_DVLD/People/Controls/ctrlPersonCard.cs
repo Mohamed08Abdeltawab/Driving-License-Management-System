@@ -25,7 +25,7 @@ namespace Test_DVLD.People.Controls
             get { return _PersonID; }
         }
 
-        public clsPerson SelectedPersonInfo
+       public clsPerson SelectedPersonInfo//to shar in other control
         {
             get { return _Person; }
         }
