@@ -12,9 +12,21 @@ namespace Test_DVLD.People
 {
     public partial class frmShowPersonInfo : Form
     {
-        public frmShowPersonInfo()
+        public frmShowPersonInfo(int PerosnID)
         {
             InitializeComponent();
+            ctrlPersonCard1.LoadPersonInfo(PerosnID);
+        }
+
+        public frmShowPersonInfo(string NationalNo)
+        {
+            InitializeComponent();
+            ctrlPersonCard1.LoadPersonInfo(NationalNo);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

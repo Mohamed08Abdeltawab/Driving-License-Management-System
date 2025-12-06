@@ -16,12 +16,12 @@ namespace Test_DVLD.People.Controls
     {
 
         public event Action<int> OnPersonSelected;
-        protected virtual void PersonSelected(int personId)
+        protected virtual void PersonSelected(int PersonID)
         {
             Action<int> handler = OnPersonSelected;
             if(handler != null)
             {
-                handler(personId);
+                handler(PersonID);
             }
         }
         public ctrlPersonCardWithFilter()
@@ -56,6 +56,8 @@ namespace Test_DVLD.People.Controls
                 gbFilters.Enabled = _FilterEnabled;
             }
         }
+
+        public int PersonID { get; internal set; }
 
         private int _PersonId;
         public int PersonId()
