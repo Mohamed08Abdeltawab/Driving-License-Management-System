@@ -11,7 +11,7 @@ namespace Test_DVLD_DataAccess
     public class clsUserData
     {
         //find user by UserID
-        public static bool GetUserDataByUserID(int UserID, ref int PersonID, ref string UserName,
+        public static bool GetUserInfoByUserID(int UserID, ref int PersonID, ref string UserName,
             ref string Password, ref bool IsActive)
         {
             bool isFound = false;
@@ -48,7 +48,7 @@ namespace Test_DVLD_DataAccess
 
 
         //find user by PersonID
-        public static bool GetUserDataByPersonID(int PersonID, ref int UserID, ref string UserName,
+        public static bool GetUserInfoByPersonID(int PersonID, ref int UserID, ref string UserName,
             ref string Password, ref bool IsActive)
         {
             bool isFound = false;
