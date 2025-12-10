@@ -176,13 +176,6 @@ namespace Test_DVLD.User
 
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmAddUpdateUser Frm1 = new frmAddUpdateUser();
-            Frm1.ShowDialog();
-            frmListUsers_Load(null, null);
-
-        }
 
         private void dgvUsers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -232,5 +225,6 @@ namespace Test_DVLD.User
 
 
         }
+
     }
 }

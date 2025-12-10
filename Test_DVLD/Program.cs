@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Test_DVLD.Login;
+using Test_DVLD.People;
+using Test_DVLD.User;
 
 namespace Test_DVLD
 {
@@ -16,7 +19,7 @@ namespace Test_DVLD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmLogin());
         }
     }
 }

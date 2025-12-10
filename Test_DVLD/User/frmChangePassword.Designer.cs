@@ -68,6 +68,7 @@
             this.txtCurrentPassword.PasswordChar = '*';
             this.txtCurrentPassword.Size = new System.Drawing.Size(167, 26);
             this.txtCurrentPassword.TabIndex = 138;
+            this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
             // 
             // pictureBox2
             // 
@@ -90,6 +91,7 @@
             this.btnClose.TabIndex = 142;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // btnSave
             // 
@@ -102,6 +104,7 @@
             this.btnSave.TabIndex = 141;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // txtConfirmPassword
             // 
@@ -112,6 +115,7 @@
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(167, 26);
             this.txtConfirmPassword.TabIndex = 140;
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // label3
             // 
@@ -144,6 +148,7 @@
             this.txtNewPassword.PasswordChar = '*';
             this.txtNewPassword.Size = new System.Drawing.Size(167, 26);
             this.txtNewPassword.TabIndex = 139;
+            this.txtNewPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtNewPassword_Validating);
             // 
             // pictureBox1
             // 

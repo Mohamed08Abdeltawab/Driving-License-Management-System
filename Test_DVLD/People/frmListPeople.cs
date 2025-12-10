@@ -225,12 +225,6 @@ namespace Test_DVLD.People
         }
 
 
-        private void btnAddPerson_Click(object sender, EventArgs e)
-        {
-            Form frm1 = new frmAddUpdatePerson();
-            frm1.ShowDialog();
-            _RefreshPeoplList();
-        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -255,6 +249,16 @@ namespace Test_DVLD.People
             Form frm = new frmAddUpdatePerson();
             frm.ShowDialog();
 
+            _RefreshPeoplList();
+        }
+
+        
+
+
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+            Form frm1 = new frmAddUpdatePerson();
+            frm1.ShowDialog();
             _RefreshPeoplList();
         }
     }
