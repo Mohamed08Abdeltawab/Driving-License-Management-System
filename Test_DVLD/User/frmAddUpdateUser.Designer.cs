@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tcUserInfo = new System.Windows.Forms.TabControl();
             this.tpPersonalInfo = new System.Windows.Forms.TabPage();
+            this.ctrlPersonCardWithFilter1 = new Test_DVLD.People.Controls.ctrlPersonCardWithFilter();
             this.btnPersonInfoNext = new System.Windows.Forms.Button();
             this.tpLoginInfo = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUserID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.chkIsActive = new System.Windows.Forms.CheckBox();
@@ -42,13 +45,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.ctrlPersonCardWithFilter1 = new Test_DVLD.People.Controls.ctrlPersonCardWithFilter();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tcUserInfo.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
             this.tpLoginInfo.SuspendLayout();
@@ -56,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -93,17 +96,29 @@
             this.tpPersonalInfo.Text = "Personal Info";
             this.tpPersonalInfo.UseVisualStyleBackColor = true;
             // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
+            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(7, 8);
+            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(846, 409);
+            this.ctrlPersonCardWithFilter1.TabIndex = 120;
+            // 
             // btnPersonInfoNext
             // 
             this.btnPersonInfoNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPersonInfoNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPersonInfoNext.Location = new System.Drawing.Point(711, 420);
+            this.btnPersonInfoNext.Location = new System.Drawing.Point(705, 420);
             this.btnPersonInfoNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPersonInfoNext.Name = "btnPersonInfoNext";
             this.btnPersonInfoNext.Size = new System.Drawing.Size(126, 37);
             this.btnPersonInfoNext.TabIndex = 119;
             this.btnPersonInfoNext.Text = "Next";
             this.btnPersonInfoNext.UseVisualStyleBackColor = true;
+            this.btnPersonInfoNext.Click += new System.EventHandler(this.btnPersonInfoNext_Click);
             // 
             // tpLoginInfo
             // 
@@ -127,6 +142,15 @@
             this.tpLoginInfo.TabIndex = 1;
             this.tpLoginInfo.Text = "LoginInfo";
             this.tpLoginInfo.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(193, 58);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 130;
+            this.pictureBox2.TabStop = false;
             // 
             // lblUserID
             // 
@@ -170,6 +194,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(167, 26);
             this.txtUserName.TabIndex = 118;
+            this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
             // 
             // txtConfirmPassword
             // 
@@ -180,6 +205,7 @@
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(167, 26);
             this.txtConfirmPassword.TabIndex = 124;
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // label1
             // 
@@ -223,15 +249,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(167, 26);
             this.txtPassword.TabIndex = 119;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(193, 58);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 130;
-            this.pictureBox2.TabStop = false;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // pictureBox1
             // 
@@ -260,17 +278,6 @@
             this.pictureBox3.TabIndex = 122;
             this.pictureBox3.TabStop = false;
             // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
-            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(7, 8);
-            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(846, 409);
-            this.ctrlPersonCardWithFilter1.TabIndex = 120;
-            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -296,6 +303,11 @@
             this.btnSave.TabIndex = 121;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAddUpdateUser
             // 
@@ -308,6 +320,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "frmAddUpdateUser";
             this.Text = "frmAddUpdateUser";
+            this.Load += new System.EventHandler(this.frmAddUpdateUser_Load);
             this.tcUserInfo.ResumeLayout(false);
             this.tpPersonalInfo.ResumeLayout(false);
             this.tpLoginInfo.ResumeLayout(false);
@@ -316,6 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,5 +357,6 @@
         private People.Controls.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -15,20 +15,19 @@ namespace Test_DVLD.People.Controls
     public partial class ctrlPersonCardWithFilter : UserControl
     {
 
+        // Define a custom event handler delegate with parameters
         public event Action<int> OnPersonSelected;
+        // Create a protected method to raise the event with a parameter
         protected virtual void PersonSelected(int PersonID)
         {
             Action<int> handler = OnPersonSelected;
-            if(handler != null)
+            if (handler != null)
             {
-                handler(PersonID);
+                handler(PersonID); // Raise the event with the parameter
             }
         }
-        public ctrlPersonCardWithFilter()
-        {
-            InitializeComponent();
-        }
-        
+
+
         private bool _ShowAddPerson = true;
         public bool ShowAddPerson
         {
@@ -57,33 +56,59 @@ namespace Test_DVLD.People.Controls
             }
         }
 
-        public int PersonID { get; internal set; }
-
-        private int _PersonId;
-        public int PersonId()
+        public ctrlPersonCardWithFilter()
         {
-            return (ctrlPersonCard1.PersonID);
-        }
-        public clsPerson SelectedPersonInfo()
-        {
-            return (ctrlPersonCard1.SelectedPersonInfo);
+            InitializeComponent();
         }
 
 
-        public void FindNow()
+        private int _PersonID = -1;
+
+        public int PersonID
+        {
+            get { return ctrlPersonCard1.PersonID; }
+        }
+
+        public clsPerson SelectedPersonInfo
+        {
+            get { return ctrlPersonCard1.SelectedPersonInfo; }
+        }
+
+        public void LoadPersonInfo(int PersonID)
+        {
+
+            cbFilterBy.SelectedIndex = 1;
+            txtFilterValue.Text = PersonID.ToString();
+            FindNow();
+
+        }
+
+        private void FindNow()
         {
             switch (cbFilterBy.Text)
             {
                 case "Person ID":
-                    ctrlPersonCard1.LoadPersonInfo(int.Parse(txtFilterValue.Text)); 
+                    ctrlPersonCard1.LoadPersonInfo(int.Parse(txtFilterValue.Text));
+
                     break;
 
-                case "National No":
+                case "National No.":
                     ctrlPersonCard1.LoadPersonInfo(txtFilterValue.Text);
                     break;
+
+                default:
+                    break;
             }
+
             if (OnPersonSelected != null && FilterEnabled)
-                PersonSelected(ctrlPersonCard1.PersonID);
+                // Raise the event with a parameter
+                OnPersonSelected(ctrlPersonCard1.PersonID);
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterValue.Text = "";
+            txtFilterValue.Focus();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -97,23 +122,18 @@ namespace Test_DVLD.People.Controls
             }
 
             FindNow();
-
         }
 
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
             cbFilterBy.SelectedIndex = 0;
             txtFilterValue.Focus();
-        }
 
-        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtFilterValue.Text = "";
-            txtFilterValue.Focus();
         }
 
         private void txtFilterValue_Validating(object sender, CancelEventArgs e)
         {
+
             if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()))
             {
                 e.Cancel = true;
@@ -128,13 +148,16 @@ namespace Test_DVLD.People.Controls
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
-            frmAddUpdatePerson frm = new frmAddUpdatePerson();
-            frm.DataBack += DataBackEvent;
-            frm.ShowDialog();
+            frmAddUpdatePerson frm1 = new frmAddUpdatePerson();
+            frm1.DataBack += DataBackEvent; // Subscribe to the event
+            frm1.ShowDialog();
+
         }
 
         private void DataBackEvent(object sender, int PersonID)
         {
+            // Handle the data received
+
             cbFilterBy.SelectedIndex = 1;
             txtFilterValue.Text = PersonID.ToString();
             ctrlPersonCard1.LoadPersonInfo(PersonID);
@@ -157,6 +180,8 @@ namespace Test_DVLD.People.Controls
             //this will allow only digits if person id is selected
             if (cbFilterBy.Text == "Person ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+
+
 
         }
     }
