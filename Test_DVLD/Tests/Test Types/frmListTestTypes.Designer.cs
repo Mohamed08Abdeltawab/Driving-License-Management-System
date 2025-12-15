@@ -38,8 +38,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.pbApplicationTypesmage = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.pbApplicationTypesmage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).BeginInit();
             this.cmsTestTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbApplicationTypesmage)).BeginInit();
@@ -122,24 +122,12 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.editToolStripMenuItem.Text = "&Edit Test Type";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
-            // 
-            // pbApplicationTypesmage
-            // 
-            this.pbApplicationTypesmage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbApplicationTypesmage.Image = global::Test_DVLD.Properties.Resources.TestType_512;
-            this.pbApplicationTypesmage.InitialImage = null;
-            this.pbApplicationTypesmage.Location = new System.Drawing.Point(397, 18);
-            this.pbApplicationTypesmage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pbApplicationTypesmage.Name = "pbApplicationTypesmage";
-            this.pbApplicationTypesmage.Size = new System.Drawing.Size(220, 189);
-            this.pbApplicationTypesmage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbApplicationTypesmage.TabIndex = 122;
-            this.pbApplicationTypesmage.TabStop = false;
             // 
             // btnClose
             // 
@@ -153,6 +141,20 @@
             this.btnClose.TabIndex = 118;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            // 
+            // pbApplicationTypesmage
+            // 
+            this.pbApplicationTypesmage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbApplicationTypesmage.Image = global::Test_DVLD.Properties.Resources.TestType_512;
+            this.pbApplicationTypesmage.InitialImage = null;
+            this.pbApplicationTypesmage.Location = new System.Drawing.Point(397, 18);
+            this.pbApplicationTypesmage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbApplicationTypesmage.Name = "pbApplicationTypesmage";
+            this.pbApplicationTypesmage.Size = new System.Drawing.Size(220, 189);
+            this.pbApplicationTypesmage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbApplicationTypesmage.TabIndex = 122;
+            this.pbApplicationTypesmage.TabStop = false;
             // 
             // frmListTestTypes
             // 
