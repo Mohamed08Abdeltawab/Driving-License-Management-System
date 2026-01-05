@@ -32,6 +32,18 @@ namespace Test_DVLD.Applications.Controls
 
         }
 
+        public void LoadApplicationInfo(int ApplicationID)
+        {
+            _Application = clsApplication.FindBaseApplication(ApplicationID);
+            if (_Application == null)
+            {
+                ResetApplicationInfo();
+                MessageBox.Show("No Application with ApplicationID = " + ApplicationID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                _FillApplicationInfo();
+        }
+
         private void _FillApplicationInfo()
         {
             _ApplicationID = _Application.ApplicationID;
@@ -60,25 +72,14 @@ namespace Test_DVLD.Applications.Controls
 
         }
 
-        private void llViewPersonInfo_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llViewPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmShowPersonInfo frm = new frmShowPersonInfo(_Application.ApplicantPersonID);
             frm.ShowDialog();
 
             //Refresh
             LoadApplicationInfo(_ApplicationID);
-        }
 
-        private void ctrlApplicationBasicInfo_Load(object sender, EventArgs e)
-        {
-            _Application = clsApplication.FindBaseApplication(ApplicationID);
-            if (_Application == null)
-            {
-                ResetApplicationInfo();
-                MessageBox.Show("No Application with ApplicationID = " + ApplicationID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-                _FillApplicationInfo();
         }
     }
 }

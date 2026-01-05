@@ -74,7 +74,7 @@
             this.llViewPersonInfo.TabIndex = 187;
             this.llViewPersonInfo.TabStop = true;
             this.llViewPersonInfo.Text = "View Person Info.";
-            this.llViewPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llViewPersonInfo_LinkClicked_1);
+            this.llViewPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llViewPersonInfo_LinkClicked);
             // 
             // lblStatusDate
             // 
@@ -367,7 +367,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ctrlApplicationBasicInfo";
             this.Size = new System.Drawing.Size(900, 217);
-            this.Load += new System.EventHandler(this.ctrlApplicationBasicInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
