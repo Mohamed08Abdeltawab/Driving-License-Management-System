@@ -23,7 +23,7 @@ namespace Test_DVLD_Buisness
 
         public int ApplicationID { set; get; }
         public int ApplicantPersonID { set; get; }
-        private clsPerson PersonInfo { get; set; }
+        public clsPerson PersonInfo { get; set; }
         public string ApplicantFullName
         {
             get
