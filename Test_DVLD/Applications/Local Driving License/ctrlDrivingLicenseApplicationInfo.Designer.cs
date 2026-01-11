@@ -73,10 +73,11 @@
             this.llShowLicenceInfo.AutoSize = true;
             this.llShowLicenceInfo.Location = new System.Drawing.Point(149, 79);
             this.llShowLicenceInfo.Name = "llShowLicenceInfo";
-            this.llShowLicenceInfo.Size = new System.Drawing.Size(140, 20);
+            this.llShowLicenceInfo.Size = new System.Drawing.Size(172, 25);
             this.llShowLicenceInfo.TabIndex = 191;
             this.llShowLicenceInfo.TabStop = true;
             this.llShowLicenceInfo.Text = "Show License Info";
+            this.llShowLicenceInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llShowLicenceInfo_LinkClicked);
             // 
             // pictureBox3
             // 
@@ -103,7 +104,7 @@
             this.lblPassedTests.Location = new System.Drawing.Point(506, 73);
             this.lblPassedTests.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassedTests.Name = "lblPassedTests";
-            this.lblPassedTests.Size = new System.Drawing.Size(19, 20);
+            this.lblPassedTests.Size = new System.Drawing.Size(24, 25);
             this.lblPassedTests.TabIndex = 188;
             this.lblPassedTests.Text = "0";
             // 
@@ -114,7 +115,7 @@
             this.label2.Location = new System.Drawing.Point(338, 73);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.Size = new System.Drawing.Size(151, 25);
             this.label2.TabIndex = 187;
             this.label2.Text = "Passed Tests:";
             // 
@@ -134,7 +135,7 @@
             this.lblAppliedFor.Location = new System.Drawing.Point(506, 36);
             this.lblAppliedFor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAppliedFor.Name = "lblAppliedFor";
-            this.lblAppliedFor.Size = new System.Drawing.Size(49, 20);
+            this.lblAppliedFor.Size = new System.Drawing.Size(62, 25);
             this.lblAppliedFor.TabIndex = 185;
             this.lblAppliedFor.Text = "[???]";
             // 
@@ -145,7 +146,7 @@
             this.label10.Location = new System.Drawing.Point(289, 36);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(173, 20);
+            this.label10.Size = new System.Drawing.Size(211, 25);
             this.label10.TabIndex = 184;
             this.label10.Text = "Applied For License:";
             // 
@@ -165,7 +166,7 @@
             this.lblLocalDrivingLicenseApplicationID.Location = new System.Drawing.Point(149, 36);
             this.lblLocalDrivingLicenseApplicationID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLocalDrivingLicenseApplicationID.Name = "lblLocalDrivingLicenseApplicationID";
-            this.lblLocalDrivingLicenseApplicationID.Size = new System.Drawing.Size(49, 20);
+            this.lblLocalDrivingLicenseApplicationID.Size = new System.Drawing.Size(62, 25);
             this.lblLocalDrivingLicenseApplicationID.TabIndex = 161;
             this.lblLocalDrivingLicenseApplicationID.Text = "[???]";
             // 
@@ -176,7 +177,7 @@
             this.label4.Location = new System.Drawing.Point(6, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.Size = new System.Drawing.Size(124, 25);
             this.label4.TabIndex = 160;
             this.label4.Text = "D.L.App ID:";
             // 
@@ -191,7 +192,7 @@
             // 
             // ctrlDrivingLicenseApplicationInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ctrlApplicationBasicInfo1);
             this.Controls.Add(this.groupBox1);
