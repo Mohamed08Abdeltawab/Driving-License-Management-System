@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD_Buisness;
 
 namespace Test_DVLD.Applications.Local_Driving_License
 {
@@ -16,5 +17,17 @@ namespace Test_DVLD.Applications.Local_Driving_License
         {
             InitializeComponent();
         }
+
+        private int _LocalDrivingLicenseApplicationID;
+        private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
+
+        private DataTable _AllLocalDrivingLicenses = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplications();
+
+        private void frmListLocalDrivingLicesnseApplications_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
