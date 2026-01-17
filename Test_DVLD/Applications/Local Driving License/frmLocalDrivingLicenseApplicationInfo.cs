@@ -24,5 +24,10 @@ namespace Test_DVLD.Applications.Local_Driving_License
         {
             ctrlDrivingLicenseApplicationInfo1.LoadApplicationInfoByLocalDrivingAppID(_LocalDrivingAppID);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
