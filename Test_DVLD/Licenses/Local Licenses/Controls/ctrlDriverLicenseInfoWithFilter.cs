@@ -42,7 +42,10 @@ namespace Test_DVLD.Licenses.Controls
         private int _LicenseID = -1;
         public int LicenseID
         {
-            get { return ctrlDriverLicenseInfo1.LicenseID }
+            get
+            {
+                return ctrlDriverLicenseInfo1.LicenseID;
+            }
         }
         public clsLicense SelectedLicenseInfo
         {
@@ -97,6 +100,11 @@ namespace Test_DVLD.Licenses.Controls
             {
                 btnFind.PerformClick();
             }
+        }
+
+        public void txtLicenseIDFoucs()
+        {
+            txtLicenseID.Focus();
         }
     }
 }

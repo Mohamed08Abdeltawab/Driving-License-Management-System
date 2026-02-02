@@ -89,10 +89,10 @@
             // ctrlDriverLicenseInfo1
             // 
             this.ctrlDriverLicenseInfo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlDriverLicenseInfo1.Location = new System.Drawing.Point(3, 75);
+            this.ctrlDriverLicenseInfo1.Location = new System.Drawing.Point(4, 75);
             this.ctrlDriverLicenseInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctrlDriverLicenseInfo1.Name = "ctrlDriverLicenseInfo1";
-            this.ctrlDriverLicenseInfo1.Size = new System.Drawing.Size(867, 341);
+            this.ctrlDriverLicenseInfo1.Size = new System.Drawing.Size(867, 339);
             this.ctrlDriverLicenseInfo1.TabIndex = 19;
             // 
             // ctrlDriverLicenseInfoWithFilter
