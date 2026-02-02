@@ -126,5 +126,10 @@ namespace Test_DVLD.Drivers
             int PeronsID = (int)dgvDrivers.CurrentRow.Cells[0].Value;
             //
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
