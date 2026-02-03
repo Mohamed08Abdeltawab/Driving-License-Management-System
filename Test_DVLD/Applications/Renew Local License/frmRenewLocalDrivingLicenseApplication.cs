@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_Buisness;
 using Test_DVLD.Global_Classes;
+using Test_DVLD.Licenses;
 using Test_DVLD.Licenses.Local_Licenses;
 using Test_DVLD_Buisness;
 
@@ -109,7 +110,8 @@ namespace Test_DVLD.Applications.Renew_Local_License
 
         private void llShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //show license history of old license
+            frmShowPersonLicenseHistory frm =
+                new frmShowPersonLicenseHistory(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.DriverInfo.PersonID);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

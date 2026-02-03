@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_Buisness;
 using Test_DVLD.Global_Classes;
+using Test_DVLD.Licenses;
 using Test_DVLD.Licenses.Local_Licenses;
 using Test_DVLD_Buisness;
 using static DVLD_Buisness.clsLicense;
@@ -111,7 +112,8 @@ namespace Test_DVLD.Applications.ReplaceLostOrDamagedLicense
 
         private void llShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //
+            frmShowPersonLicenseHistory frm =
+                new frmShowPersonLicenseHistory(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.DriverInfo.PersonID);
         }
 
         private void llShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

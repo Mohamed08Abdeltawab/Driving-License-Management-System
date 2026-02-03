@@ -325,6 +325,7 @@ namespace DVLD_DataAccess
             string query = @"UPDATE dbo.DetainedLicenses
                               SET IsReleased = 1, 
                               ReleaseDate = @ReleaseDate, 
+                              ReleasedByUserID = @ReleasedByUserID,
                               ReleaseApplicationID = @ReleaseApplicationID   
                               WHERE DetainID=@DetainID;";
 
