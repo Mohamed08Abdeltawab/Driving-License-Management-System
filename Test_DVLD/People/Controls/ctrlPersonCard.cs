@@ -25,7 +25,7 @@ namespace Test_DVLD.People.Controls
             get { return _PersonID; }
         }
 
-       public clsPerson SelectedPersonInfo//to shar in other control
+        public clsPerson SelectedPersonInfo
         {
             get { return _Person; }
         }
@@ -123,6 +123,6 @@ namespace Test_DVLD.People.Controls
             LoadPersonInfo(_PersonID);
         }
 
-        
+
     }
 }

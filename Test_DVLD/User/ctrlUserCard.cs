@@ -47,7 +47,10 @@ namespace Test_DVLD.User
             lblUserID.Text = _User.UserID.ToString();
             lblUserName.Text = _User.UserName.ToString();
 
-            lblIsActive.Text = _User.IsActive ? "Yes" : "No";
+            if (_User.IsActive)
+                lblIsActive.Text = "Yes";
+            else
+                lblIsActive.Text = "No";
 
         }
 
@@ -59,6 +62,5 @@ namespace Test_DVLD.User
             lblUserName.Text = "[???]";
             lblIsActive.Text = "[???]";
         }
-
     }
 }

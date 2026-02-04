@@ -104,21 +104,14 @@ namespace Test_DVLD.User
             {
                 errorProvider1.SetError(txtConfirmPassword, null);
             }
+            ;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Close();
 
-        }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
             if (!this.ValidateChildren())
             {
                 //Here we dont continue becuase the form is not valid
@@ -140,6 +133,12 @@ namespace Test_DVLD.User
                 MessageBox.Show("An Erro Occured, Password did not change.",
                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
